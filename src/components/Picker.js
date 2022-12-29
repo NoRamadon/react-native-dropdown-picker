@@ -1264,7 +1264,7 @@ function Picker({
     /**
      * onPress item.
      */
-    const onPressItem = useCallback((item, customItem = false) => {
+    const onPressItem = (item, customItem = false) => {
         if (customItem !== false) {
             item.custom = false;
             setItems(state => [...state, item]);
@@ -1344,18 +1344,7 @@ function Picker({
 
         if (closeAfterSelecting && ! multiple)
             onPressClose();
-    }, [
-        setValue,
-        multiple,
-        min,
-        max,
-        onPressClose,
-        onSelectItem,
-        closeAfterSelecting,
-        multiple,
-        setItems,
-        _schema
-    ]);
+    };
 
     /**
      * The tick icon component.
